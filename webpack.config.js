@@ -9,7 +9,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const port = 3000;
 let publicUrl = `http://localhost:${port}`;
-if(process.env.GITPOD_WORKSPACE_URL){
+if (process.env.GITPOD_WORKSPACE_URL) {
   const [schema, host] = process.env.GITPOD_WORKSPACE_URL.split('://');
   publicUrl = `${port}-${host}`;
 }
@@ -67,15 +67,15 @@ module.exports = {
       framework: "vanillajs"
     }),
     new FriendlyErrorsWebpackPlugin({
-        // additionalFormatters: [cleanStack]
+      // additionalFormatters: [cleanStack]
     }),
     new ErrorOverlayPlugin(),
     new HtmlWebpackPlugin({
-        filename: "index.html",
-        template: "src/index.html"
+      filename: "index.html",
+      template: "src/index.html"
     }),
     new PrettierPlugin({
-        failSilently: true
+      failSilently: true
     }),
   ]
 };
